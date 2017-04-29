@@ -1,0 +1,32 @@
+{
+  "name": "vue-md-input-wrapper",
+  "version": "1.0.0",
+  "description": "Generic material wrapper for any input in Vue",
+  "main": "src/index.ts",
+  "keywords": [
+    "vue",
+    "material",
+    "input",
+    "wrapper"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddow/vue-md-input-wrapper.git"
+  },
+  "author": "fmdm",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^2.2.1",
+    "vue": "^2.2.1"
+  },
+  "dependencies": {
+    "vue-property-decorator": "^4.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/eddow/vue-md-input-wrapper/issues"
+  },
+  "homepage": "https://github.com/eddow/vue-md-input-wrapper"
+}

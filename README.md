@@ -20,7 +20,8 @@ Use it with your own inputs that you configure.
 Everything is done by CSS, so the class input:valid is the key point of the animations
 The HTML validation should therefore specify "invalid" when empty - so the "required" option of the input has to be set regardless of if the field is requiresd in the application or not; and any other validation mechanisms are to be set off : the validation is managed upstream from this control.
 
-So, the HTML has to invalidate an empty string and validate all the remaining (the case of &lt;input type=number&gt; is surprising as 3.1415 is considered invalid for the dot)
+So, the HTML has to invalidate an empty string and validate all the remaining.
+If this is impossible, like for HTML5 types, you can remove the required part so that the label doesn't move and never interferes with the pattern displayed by the browser like for date, time, or invalid number, email and URL.
 
 After, when validation is done upstream, setting the "error" property to a truish string displays the string and changes some colors
 

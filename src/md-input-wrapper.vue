@@ -1,5 +1,5 @@
 <template>
-	<div class="md-input-wrapper" :class="{'md-input-required': required, 'md-input-invalid': error}">
+	<div class="md-input-wrapper" :class="{'md-input-required': required, 'md-input-invalid': error, 'md-fixed-label': !floatingLabel}">
 		<slot>
 			<input type="text" required />
 		</slot>
@@ -17,10 +17,14 @@ export default class InputWrapper extends Vue {
 	@Prop() label: string
 	@Prop() required: boolean
 	@Prop() error: string
-	input
-	mounted() {
+	floatingLabel = true
+
+	updated() { this.readRequire(); }
+	mounted() { this.readRequire(); }
+	readRequire() {
 		var def: any = this.$slots && this.$slots.default,
 			input = def && def[0];
+		this.floatingLabel = input.elm.getAttribute('required');//data.attr.required;
 	}
 }
 </script>
@@ -70,13 +74,11 @@ $error-color: #c33;
   }
 
   &.md-input-required {
-		input ~ label:after {
+		input:invalid ~ label:after {
 			color: $error-color;
 		}
-		input:valid ~ label:after {
-			color: #5264AE;
-		}
     label:after {
+			color: #5264AE;
       top: 2px;
       font-size: 12px;
       position: absolute;
@@ -88,7 +90,7 @@ $error-color: #c33;
     }
   }
 	/* active state */
-	input:focus ~ label, input:valid ~ label {
+	input:focus ~ label, input:valid ~ label, &.md-fixed-label input ~ label {
 		top: 0;
 		font-size:14px;
 		color:#5264AE;

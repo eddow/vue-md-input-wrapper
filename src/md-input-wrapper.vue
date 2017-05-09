@@ -24,7 +24,7 @@ export default class InputWrapper extends Vue {
 	readRequire() {
 		var def: any = this.$slots && this.$slots.default,
 			input = def && def[0];
-		this.floatingLabel = input.elm.getAttribute('required');//data.attr.required;
+		this.floatingLabel = input.elm.getAttribute('required');
 	}
 }
 </script>
@@ -33,7 +33,6 @@ $error-color: #c33;
 /* form starting stylings ------------------------------- */
 .md-input-wrapper {
   position:relative;
-	width: 100%;
 	min-height: 48px;
 	margin: 4px 0 24px;
 	padding-top: 16px;
@@ -41,7 +40,6 @@ $error-color: #c33;
 		font-size: 18px;
 		height: 32px;
 		display: block;
-		width: 100%;
 		border: none;
 		border-bottom: 1px solid #ccc;
 	}
